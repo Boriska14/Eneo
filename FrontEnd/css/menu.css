@@ -1,0 +1,25 @@
+.dropdown{
+    position: relative;
+    display: inline-block;
+    color: #f1f1f1;
+}
+
+.dropdown-content{
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(183, 9, 9, 0);
+    z-index: 1;
+    color :blue;
+}
+ 
+.dropdown:hover .dropdown-content{
+    display: block;
+}
+.dropdown-item{
+    background-color: #f1f1f1;
+}
+body {
+    font-family: Arial, sans-serif;
+}

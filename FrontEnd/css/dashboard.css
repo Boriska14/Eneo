@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, sans-serif;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+h1 {
+    text-align: center;
+}
+.chart-container {
+    position: relative;
+    width: 50%;
+    margin: 0 auto;
+}
+.chart-container canvas {
+    width: 100%;
+    height: auto;
+}
+.legend {
+    display:flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+.legend-item span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+.legend-item span.color-1 {
+    background-color: #2ecc71;
+}
+.legend-item span.color-2 {
+    background-color: #3498db;
+    
+}
+
+.table-container {
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: none;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+.menu-item {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 200px;
+    background-color: #0bb351;
+}
+
+.logo {
+    text-align: center;
+    padding: 20px;
+}
+
+.logo img {
+    width: 120px;
+    height: 100px;
+}
+
+.nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav ul li {
+    padding: 10px 20px;
+    border-bottom: 1px solid black;
+}
+
+.nav ul li:last-child {
+    border-bottom: none;
+}
+
+.nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav ul li a:hover {
+    color: #F8F8F8;
+}
+.content {
+    margin-left: 250px; /* Adjust content area to accommodate sidebar */
+    padding: 16px;
+}
+
+button{
+    border: none;
+    background-color: #f2f5f7;
+}  
+
+.space {
+    display: flex;
+    gap: 20px; /* ajuster la valeur en fonction de la taille de l'espace que vous voulez créer */
+}
+

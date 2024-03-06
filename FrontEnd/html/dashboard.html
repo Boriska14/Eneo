@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard</title>
+<link rel="stylesheet" href="..\css\dashboard.css"></link>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="..\css\menu.css"></link>
+
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="..\img\logo.png" >
+        </div>
+        <ul>
+            <div class="dropdown">
+                
+                    
+                        <span>Utilisateurs</span>
+                        <div class="dropdown-content">
+                            <a href="add_user.html">Ajout d'utilisateur</a>
+                            <a href="del_user.html">Suppression d'utilisateur</a>
+
+                        </div>  
+            </div>
+       
+       
+            <div class="dropdown">
+                
+                <span>Partenaires</span>
+                <div class="dropdown-content">
+                    <a href="add_partner.html">Ajout de partenaire</a>
+                    <a href="del_partner.html">Suppression de partenaire</a>
+                </div>
+        
+            </div><br>
+
+            <div class="dropdown">
+                <span>Upload</span>
+
+                <div class="dropdown-content">
+                
+                    <a href="upload.html">Upload file</a>
+                </div>
+        
+            </div>
+
+
+        </ul>
+    </div>
+
+    <div class="container mt-5" style="    display: flex;justify-content: flex-start;  ">
+        <!-- Votre tableau de bord va ici -->
+        <div class="container" style="margin-bottom: 80px;">
+            <h1 style="margin-bottom:50px">Bilan de la Réconciliation</h1>
+            <div class="chart-container" style="margin-bottom: 20px;">
+                <canvas id="myChart"></canvas>
+            </div>
+            <div class="legend" >
+                <div class="legend-item" >
+                    <span class="color-1"></span>
+                    <span>Transactions Reconciliées</span>
+                </div>
+                <br>
+                <div class="legend-item" >
+                    <span class="color-2"></span>
+                    <span>Transactions Non Réconciliées</span>
+                </div>
+            </div>
+        </div>
+        <div class="table-container" style="margin-bottom: 100px;">
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Nombre de transactions</th>
+                        <th>KWH</th>
+                        <th>Montant</th>
+        
+        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Transactions total</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+        
+        
+                    </tr>
+                    <tr>
+                        <td>Transactions Réconciliées</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+        
+                    </tr>
+                    <tr>
+                        <td>Transactions Non Réconciliées</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+        
+                    </tr>
+                    <!-- Ajouter plus de lignes si nécessaire -->
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+    
+    
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="..\js\board.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>
