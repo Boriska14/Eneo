@@ -8,7 +8,7 @@ router = APIRouter()
 @router.post("/process_and_insert_file/")
 def process_and_insert_file(partner_id:str=Form(), file:UploadFile=File(...)):
     # Lecture du fichier CSV avec pandas
-     # Obtenir le contenu du fichier
+    # Obtenir le contenu du fichier
     print("start")
     data = pd.read_csv(file.file, sep=";")
     data["partner_id"]=partner_id
