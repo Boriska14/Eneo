@@ -1,6 +1,9 @@
-from sqlalchemy import Boolean, Column, Float, Integer, String, Enum,DateTime,ForeignKey
+from sqlalchemy import  JSON, Column, Float, Integer, String, Enum,DateTime,ForeignKey,TIMESTAMP,Text
 from app.database import Base
+from sqlalchemy.dialects.postgresql import ARRAY,VARCHAR  # Importez le type ARRAY depuis les dialectes PostgreSQL
+
 from datetime import datetime
+
 
 class UserRole(str, Enum):
     admin = "admin"
@@ -59,3 +62,33 @@ class EneoData(Base):
     date=Column(String)
     meter_no=Column(String(255))
     num_ref=Column(String(255))
+
+
+class Logs(Base):
+    __tablename__="log"
+
+
+    id=Column(Integer,primary_key=True,autoincrement=True) 
+    timestamp=Column(TIMESTAMP,nullable=False)
+    level=Column(String(10),nullable=False)
+    source=Column(String(50),nullable=False)
+    message=Column(Text,nullable=False)
+    context=Column(JSON)
+
+
+class Donnees(Base):
+    __tablename__ = 'donnees'
+
+    id = Column(Integer, primary_key=True)
+    date=Column(String)
+    partner=Column(String)
+    total= Column(String)
+    total_montant = Column(Float)
+    total_kwh = Column(Float)
+    NonRec = Column(Integer)
+    NonRec_montant = Column(Float)
+    NonRec_kwh = Column(Float)
+    Rec= Column(Integer)
+    Rec_montant = Column(Float)
+    Rec_kwh = Column(Float)
+    NonRec_data_list = Column(ARRAY(VARCHAR))

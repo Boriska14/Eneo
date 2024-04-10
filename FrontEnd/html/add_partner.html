@@ -1,34 +1,26 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>
-            Add New Partner
-        </title>
-        <link rel="stylesheet" href="..\css\css_form.css"></link>
-       
-    </head>
-    <body>
-        <div class="container">
-            <h1>
-                AJOUTEZ UN PARTENAIRE
-            </h1>
-            <form id="partner_form" action="" method="post" enctype="multipart/form-data">
-                <div class="form-group">
-                    <label for="name">Nom de l'entreprise:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="description">Description:</label>
-                    <input type="text" id="description" name="description" required>
-                </div>
-               <div class="form-group">
-                    <input type="submit" value="Ajouter">
-               </div>
-            </form>
-
-        </div>
-
-        <script src="..\js\add_partner.js" defer></script>
-
-    </body>
+<head>
+    <title>Ajouter un partenaire</title>
+    <link rel="stylesheet" href="..\css\css_form.css"></link>
+</head>
+<body>
+    <div class="container">
+        <h1>AJOUTER UN PARTENAIRE</h1>
+        <form id="partner_form" action="" method="post" enctype="multipart/form-data">
+            <div class="logo-container"></div> <!-- Container pour le logo -->
+            <div class="mb-4">
+                <label for="name">Nom de l'entreprise:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="mb-4">
+                <label for="description">Description:</label>
+                <input type="text" id="description" name="description" required>
+            </div>
+            <div>
+                <input type="submit" value="Ajouter">
+            </div>
+        </form>
+    </div>
+</body>
 </html>

@@ -11,14 +11,14 @@ from app.schemas import PartnerCreate
 
 router = APIRouter()
 
-
+"""
 @router.post("/partners_create/")
 def create_partner_route(partner_data: PartnerCreate, db: Session = Depends(get_db)):
-    part = partner.get_current_partner(db,partner_data.name)
+    part = partner.get_partner(db, partner_data)  # Assuming partner_data is the object
     if part:
         raise HTTPException(status_code=300,detail="partner already exist")
     return partner.create_partner(db=db, partner_data=partner_data)
-
+"""
 
 @router.delete("/partners_delete/")
 def delete_user(data: PartnerDelete, db: Session = Depends(get_db)):
@@ -32,3 +32,15 @@ def delete_user(data: PartnerDelete, db: Session = Depends(get_db)):
 @router.get("/partners/")
 def get_partners(skip: int = 0, limit: int = 10, db: Session = Depends(get_db)):
     return db.query(Partner).offset(skip).limit(limit).all()
+
+
+@router.post("/partners_create/")
+def create_partner(partner_data: PartnerCreate,db:Session=Depends(get_db)):
+    partner = db.query(Partner).filter(Partner.name == partner_data.name).first()
+    if partner:
+        raise HTTPException(status_code=400, detail="Le partenaire existe déjà")
+    new_partner = Partner(name=partner_data.name,description=partner_data.description)
+    db.add(new_partner)
+    db.commit()
+    db.refresh(new_partner)
+    return new_partner

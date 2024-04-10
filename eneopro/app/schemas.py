@@ -1,7 +1,10 @@
 
 from pydantic import BaseModel, Field,constr, validator
 from fastapi import UploadFile,File
-import re 
+import re
+
+from app.models import EneoData
+
 
 class UserBase(BaseModel):
     username: constr(pattern="^[a-zA-Z]+\.[a-zA-Z]+$") # type: ignore
@@ -65,3 +68,22 @@ class EneoDataBase(BaseModel):
     date:str
     meter_no:str
     num_ref:str
+
+   
+class DateModel(BaseModel):
+  date_str: str
+
+
+class DonneesSchema(BaseModel):
+    date: str
+    partner: str
+    total: int
+    total_montant: float
+    total_kwh: float
+    NonRec: int
+    NonRec_montant: float
+    NonRec_kwh: float
+    Rec: int
+    Rec_montant: float
+    Rec_kwh: float
+    NonRec_data_list: list[EneoDataBase]  # Assurez-vous que le type de données est approprié

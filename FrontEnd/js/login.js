@@ -20,9 +20,9 @@ document.getElementById('login').addEventListener(
 
                 const userRole = data.role;
                 if (userRole === 'admin') {
-                    window.location.href = 'dashboard.html';
-                  } else if (userRole === 'utilisateur') {
-                    window.location.href = '/utilisateur';
+                  window.location.href = "./dashboard.html"
+                } else if (userRole === 'utilisateur') {
+                    window.location.href = './users_dash.html';
                   } else {
                     // Afficher un message d'erreur
                     alert("Rôle utilisateur non reconnu.");

@@ -29,4 +29,3 @@ app.include_router(rec.router)
 # db = SessionLocal()
 
 # create_user(db, "Karl Nyabe", "doudou", "user")
-

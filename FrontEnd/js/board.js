@@ -1,11 +1,10 @@
-
     var ctx = document.getElementById('myChart').getContext('2d');
     var myChart = new Chart(ctx, {
         type: 'doughnut',
         data: {
             labels: ['Category 1', 'Category 2'],
             datasets: [{
-                data: [10, 20],
+                data: [recNum.number, recNbr.nbr],
                 backgroundColor: ['#2ecc71', '#3498db'],
                 hoverOffset: 4
             }]
@@ -30,4 +29,5 @@
             sidebar.style.left = "0px"; // Show sidebar
         }
     }
+    
     

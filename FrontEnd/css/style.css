@@ -1,29 +1,240 @@
+/* Styles généraux */
 body {
-    font-family: sans-serif;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  input[type="text"], input[type="number"], input[type="date"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  button[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9fafb;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Styles pour la barre latérale (sidebar) */
+.sidebar {
+  width: 250px;
+  background-color: #374151;
+  color: #fff;
+  padding: 20px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.logo img {
+  width: 100%;
+  max-width: 150px;
+  display: block;
+  margin: 0 auto;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 30px;
+}
+
+.sidebar ul li {
+  margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+  color: #ccd6f6;
+  text-decoration: none;
+  display: block;
+  padding: 12px 20px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+  background-color: #4b5563;
+}
+
+/* Styles pour le contenu du dashboard */
+.dashboard-section {
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.dashboard-heading {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.dashboard-subheading {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* Styles pour les graphiques */
+.chart-container {
+  position: relative;
+  height: 400px;
+}
+
+/* Styles pour la légende des graphiques */
+.legend {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.legend-item span {
+  margin-left: 5px;
+}
+
+/* Styles pour les tableaux */
+.table-container {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th, .table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.table th {
+  background-color: #f3f4f6;
+  color: #4a5568;
+}
+
+/* Styles pour les dropdowns */
+.dropdown {
+  position: relative;
+}
+
+.dropdown .dropdown-toggle::after {
+  content: '\25BC';
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #4CAF50; /* Vert */
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 8px;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li {
+  padding: 10px;
+}
+.dropdown-menu li a {
+  color: #fff; /* Couleur du texte dans le menu déroulant */
+  text-decoration: none;
+  display: block;
+  transition: color 0.3s ease;
+}
+.dropdown-menu li a:hover {
+  color: #FFEB3B; /* Couleur du texte au survol */
+}/* Styles pour la barre latérale (sidebar) */
+.sidebar {
+  width: 250px;
+  background-color: #4CAF50; /* Vert */
+  color: #fff;
+  padding: 20px;
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+
+.sidebar .logo img {
+  width: 100%;
+  max-width: 150px;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+  background-color: #718096;
+}
+
+/* Styles pour le contenu du dashboard */
+.container {
+  margin-left: 250px; /* Pour tenir compte de la largeur de la barre latérale */
+}
+
+.dashboard-section {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-section:last-child {
+  margin-bottom: 0; /* Pour éviter un espace vide sous le dernier élément */
+}
+
+.dashboard-heading {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.dashboard-subheading {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* Centrer le diagramme */
+.chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+}
+
+/* Styles pour les graphiques */
+.canvas-container {
+  position: relative;
+}
+
+/* Styles pour les tableaux */
+.table-container {
+  overflow-x: auto;
+}

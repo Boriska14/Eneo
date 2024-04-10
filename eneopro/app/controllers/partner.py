@@ -1,3 +1,4 @@
+from typing import Optional
 from fastapi import Depends, HTTPException
 from sqlalchemy.orm import Session
 from app.models import Partner
@@ -9,16 +10,22 @@ from app.schemas import PartnerCreate, PartnerRequest
 
 
 
-def get_partner(partner_request: PartnerRequest, db: Session = Depends(get_db)) :
-    partner = db.query(Partner).filter(Partner.name == partner_request.name).first()
-    return partner.id if partner else -1
+from sqlalchemy.orm import Session
+
+from app.models import Partner
+
+
+def get_partner_by_name(db: Session, name: str) -> Optional[Partner]:
+    return db.query(Partner).filter(Partner.name == name).first()
+
+
 
 
 def get_partner_by_id(db: Session, partner_id: int):
     return db.query(Partner).filter(Partner.id == partner_id).first()
 
 def get_current_partner(db: Session, name: str):
-    partner = get_partner(db, name)
+    partner = get_partner_by_name(db, name)
     if not partner:
         return None
     return partner
